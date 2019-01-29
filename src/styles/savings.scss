@@ -1,0 +1,155 @@
+.sc-savings {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem;
+}
+
+.sc-widget {
+    width: 30rem;
+    border: 1px solid #01576B;
+    margin: 2rem;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,.3), 0 0.5px 1.5px 0 rgba(0,0,0,.3);
+    background-color: white;
+
+    &__header {
+        height: 3rem;
+        margin: 0;
+        padding-left: 2rem;
+        text-align: center;
+        line-height: 3rem;
+        background-color: #01576B;
+        text-transform: uppercase;
+        color: white;
+    }
+}
+
+.sc-inputs {
+
+    &__block {
+        margin: 2rem 2rem;
+    }
+
+    &__header {
+        color: #288570;
+        font-size: 1.4rem;
+    }
+
+    &__row {
+        margin: 1rem 0;
+        display: flex;
+    }
+
+    &__input-wrapper {
+        margin-right: 1rem;
+
+        &:nth-child(1) {
+            width: 40%;
+        }
+        &:nth-child(2) {
+            width: 30%;
+        }
+        &:nth-child(3) {
+            width: 30%;
+            margin-right: 0;
+        }
+    }
+
+    &__label {
+        color: #699CA8;
+    }
+
+    &__input {
+        color: #D2D3D2;
+        height: 3rem;
+        border-radius: .5rem;
+        border: 1px solid #699CA8;
+        width: 100%;
+
+    }
+
+}
+
+.sc-calculator {
+
+    &__info {
+        margin: 2rem;
+        color: #699CA8;
+        text-align: center;
+    }
+
+    &__inputs {
+        margin: 2rem;
+    }
+
+    &__input-wrapper {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+    }
+
+    &__label {
+        color: #196377;
+        font-weight: bold;
+        font-size: 1.2rem;
+        width: 40%;
+    }
+
+    &__range-wrapper {
+        width: 60%;
+    }
+
+
+    &__result {
+        margin: 2rem;
+        font-weight: bold;
+        color: #196377;
+        text-align: center;
+        span {
+            color: #6EBB16;
+        }
+    }
+
+    &__more {
+        margin: 2rem;
+    }
+    &__more-link {
+        display: block;
+        margin: 0 auto;;
+        width: 60%;
+        border: 1px solid #6EBB16;
+        border-radius: 5px;
+        padding: 0.5rem;
+        text-align: center;
+        color: #6EBB16;
+        font-weight: bold;
+    }
+
+    &__review {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin: 2rem;
+
+        span {
+            text-decoration: underline;
+            color: #196377;
+        }
+    }
+
+    &__vote {
+        border: none;
+        background: #fff; 
+        font-size: 1.5rem;
+        margin-left: 1rem;
+    }
+
+    &__upvote {
+        color: transparent;  
+        text-shadow: 0 0 0 #196377;
+    }
+
+    &__downvote {
+        color: transparent;  
+        text-shadow: 0 0 0 #6EBB16;
+    }
+}

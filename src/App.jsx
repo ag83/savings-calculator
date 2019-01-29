@@ -9,7 +9,9 @@ export default class App extends Component {
         return (
             <>
                 <header className="sc-header"><h1 className="sc-header__name">Hatch</h1></header>
-                <CalculatorContainer />
+                <main className="sc-main">
+                    <CalculatorContainer />
+                </main>
             </>
         );
       }
