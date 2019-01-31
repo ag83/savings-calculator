@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import  SawingsRow from "./SawingsRow";
+import  SavingsRow from "./SavingsRow";
 
 export default class SavingsInputs extends Component {
 
@@ -23,7 +23,7 @@ export default class SavingsInputs extends Component {
                                 updateInputData: this.props.updateIncome
                             }
                             return (
-                                <SawingsRow key={income.name} {...rowProps}/>
+                                <SavingsRow key={income.name} {...rowProps}/>
                             )
                         })
                     }
@@ -40,7 +40,7 @@ export default class SavingsInputs extends Component {
                                 updateInputData: this.props.updateExpenditures
                             }
                             return (
-                                <SawingsRow key={exp.name} {...rowProps}/>
+                                <SavingsRow key={exp.name} {...rowProps}/>
                             )
                         })
                     }

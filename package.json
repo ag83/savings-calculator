@@ -19,11 +19,15 @@
   },
   "jest": {
     "transform": {
-      "^.+\\.js$": "babel-jest"
+      "^.+\\.js$": "babel-jest",
+      "^.+\\.jsx$": "babel-jest"
     },
     "setupFiles": [
       "./testSetup.js"
-    ]
+    ],
+    "moduleNameMapper": {
+      "\\.(scss)$": "<rootDir>/src/mocks/styleMock.js"
+    }
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",
