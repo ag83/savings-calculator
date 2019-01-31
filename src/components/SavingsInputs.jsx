@@ -1,97 +1,49 @@
 import React, { Component } from "react";
 
+import  SawingsRow from "./SawingsRow";
 
 export default class SavingsInputs extends Component {
+
     
     render() {
+        const yearlyIncome = this.props.inputsData.incomes.filter((inc) => inc.frequency === 'annual');
+        const monthlyExpenditures = this.props.inputsData.expenditures.filter((exp) => exp.frequency === 'monthly');
 		return (
             <section className="sc-widget">
                 <h2 className="sc-widget__header" >your income & spend</h2>
                 <div className="sc-inputs__block">
-                    <h3 className="sc-inputs__header" >Annual income</h3>
-                    <div className="sc-inputs__row">
-                        <div className="sc-inputs__input-wrapper">
-                            <label className="sc-inputs__label">Annual salary</label>
-                            <input type="text"
-                                className="sc-inputs__input"
-                             />
-                        </div>
-                        <div className="sc-inputs__input-wrapper">
-                            <label className="sc-inputs__label">From age</label>
-                            <input type="text"
-                                className="sc-inputs__input"
-                             />
-                        </div>
-                        <div className="sc-inputs__input-wrapper">
-                            <label className="sc-inputs__label">To age</label>
-                            <input type="text"
-                                className="sc-inputs__input"
-                             />
-                        </div>
-                    </div>
+                    {
+                        yearlyIncome.length? (<h3 className="sc-inputs__header">Annual income</h3>) : null
+                    }
+                    {
+                        
+                        yearlyIncome.map((income) => {
+                            const rowProps = {
+                                data: income,
+                                updateInputData: this.props.updateIncome
+                            }
+                            return (
+                                <SawingsRow key={income.name} {...rowProps}/>
+                            )
+                        })
+                    }
                 </div>
                 <div className="sc-inputs__block">
-                    <h3 className="sc-inputs__header">Monthly spendings</h3>
-                    <div className="sc-inputs__row">
-                        <div className="sc-inputs__input-wrapper">
-                            <label className="sc-inputs__label">Mortgage</label>
-                            <input type="text"
-                                className="sc-inputs__input"
-                             />
-                        </div>
-                        <div className="sc-inputs__input-wrapper">
-                            <label className="sc-inputs__label">From age</label>
-                            <input type="text"
-                                className="sc-inputs__input"
-                             />
-                        </div>
-                        <div className="sc-inputs__input-wrapper">
-                            <label className="sc-inputs__label">To age</label>
-                            <input type="text"
-                                className="sc-inputs__input"
-                             />
-                        </div>
-                    </div>
-                    <div className="sc-inputs__row">
-                        <div className="sc-inputs__input-wrapper">
-                            <label className="sc-inputs__label">Bills</label>
-                            <input type="text"
-                                className="sc-inputs__input"
-                             />
-                        </div>
-                        <div className="sc-inputs__input-wrapper">
-                            <label className="sc-inputs__label">From age</label>
-                            <input type="text"
-                                className="sc-inputs__input"
-                             />
-                        </div>
-                        <div className="sc-inputs__input-wrapper">
-                            <label className="sc-inputs__label">To age</label>
-                            <input type="text"
-                                className="sc-inputs__input"
-                             />
-                        </div>
-                    </div>
-                    <div className="sc-inputs__row">
-                        <div className="sc-inputs__input-wrapper">
-                            <label className="sc-inputs__label">General spendings</label>
-                            <input type="text"
-                                className="sc-inputs__input"
-                             />
-                        </div>
-                        <div className="sc-inputs__input-wrapper">
-                            <label className="sc-inputs__label">From age</label>
-                            <input type="text"
-                                className="sc-inputs__input"
-                             />
-                        </div>
-                        <div className="sc-inputs__input-wrapper">
-                            <label className="sc-inputs__label">To age</label>
-                            <input type="text"
-                                className="sc-inputs__input"
-                             />
-                        </div>
-                    </div>
+                    {
+                        monthlyExpenditures.length? (<h3 className="sc-inputs__header">Monthly spendings</h3>) : null
+                    }
+                    {
+                        
+                        monthlyExpenditures.map((exp) => {
+                            const rowProps = {
+                                data: exp,
+                                updateInputData: this.props.updateExpenditures
+                            }
+                            return (
+                                <SawingsRow key={exp.name} {...rowProps}/>
+                            )
+                        })
+                    }
                 </div>
             </section>
 		);

@@ -2,8 +2,9 @@ import { createStore, applyMiddleware, compose, combineReducers } from "redux";
 import thunk from "redux-thunk";
 
 import savings from './reducers/savingsReducer';
+import { saveState, loadState } from "./helpers/reducerHelpers";
 
-const initialState = {};
+const initialState = loadState() || {};
 const enhancers = [];
 const middleware = [thunk];
 
@@ -26,5 +27,11 @@ const store = createStore(
     initialState,
     composedEnhancers
 );
+
+store.subscribe(() => {
+    saveState({
+        savings: store.getState().savings
+    });
+});
 
 export default store;
